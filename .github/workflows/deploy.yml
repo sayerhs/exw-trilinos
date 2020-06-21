@@ -12,6 +12,6 @@ jobs:
       - uses: docker/build-push-action@v1
         with:
           username: sayerhs
-          password: {{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
           repository: exawind/exw-trilinos
           tags: latest
