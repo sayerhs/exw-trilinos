@@ -1,0 +1,17 @@
+name: Deploy to Docker Hub
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: sayerhs
+          password: {{ secrets.DOCKER_PASSWORD }}
+          repository: exawind/exw-trilinos
+          tags: latest
